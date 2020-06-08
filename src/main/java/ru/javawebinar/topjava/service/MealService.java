@@ -15,7 +15,7 @@ public class MealService {
         mealRepository = new MealRepository();
     }
 
-    private List<MealTo> findAll() {
+    public List<MealTo> findAll() {
         return MealsUtil.filteredByStreams(mealRepository.findAll(), LocalTime.MIN, LocalTime.MAX, 2000);
     }
 }
