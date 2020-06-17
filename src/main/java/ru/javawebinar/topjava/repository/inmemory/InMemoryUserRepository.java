@@ -24,11 +24,9 @@ public class InMemoryUserRepository implements UserRepository {
     private AtomicInteger counter_id = new AtomicInteger(0);
 
     {
-        IntStream.of(2)
-                .forEach(value -> save(new User("userName" + value, value + "email@mail.ru", "password", Role.USER)));
-        IntStream.of(2)
-                .forEach(value -> save(new User("adminName" + value, value + "emailAdmin@mail.ru", "password", Role.ADMIN)));
-
+        save(new User("adminName", "email_admin@mail.ru", "password", Role.ADMIN));
+        save(new User("userName1", "email_user1@mail.ru", "password", Role.USER));
+        save(new User("userName2", "email_user2@mail.ru", "password", Role.USER));
     }
 
     @Override
